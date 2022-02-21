@@ -1,0 +1,84 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d6e80a0ab566fae4094067673badea3d, type: 3}
+  m_Name: EditDocument
+  m_EditorClassIdentifier: 
+  isCollect: 0
+  documentType: 0
+  department: 0
+  toolType: 0
+  toolName: 
+  documentName: "Unity\u5B89\u88C5"
+  documentUrl: https://topjoy.yuque.com/tkw/gc5bhc/fq2t0e
+  documentSavePath: "\u57FA\u7840\u6587\u6863/Git\u4F7F\u7528"
+  paragraphs:
+  - title: "\u666E\u901A\u5185\u5BB9\u548C\u590D\u5236\u5185\u5BB9"
+    sentences:
+    - contentFormat: 0
+      titleFormat: 0
+      content: "\u6DFB\u52A0\u5185\u5BB9\u6DFB\u52A0\u5185\u5BB9\u6DFB\u52A0\u5185\u5BB9\u6DFB\u52A0\u5185\u5BB9cube
+        cube \u6DFB\u52A0\u5185\u5BB9\u6DFB\u52A0\u5185\u5BB9\u6DFB\u52A0\u5185\u5BB9\u6DFB\u52A0\u5185\u5BB9\u6DFB\u52A0\u5185\u5BB9
+        \u6DFB\u52A0\u5185\u5BB9\u6DFB\u52A0\u5185\u5BB9\u6DFB\u52A0\u5185\u5BB9\u6DFB\u52A0\u5185\u5BB9\u6DFB\u52A0\u5185\u5BB9"
+      copyContent: 
+      texPath: 
+      fileUrl: 
+    - contentFormat: 1
+      titleFormat: 0
+      content: "\u6DFB\u52A0\u5185\u5BB9"
+      copyContent: "\u590D\u5236\u5185\u5BB9"
+      texPath: 
+      fileUrl: 
+    - contentFormat: 3
+      titleFormat: 1
+      content: "\u6DFB\u52A0\u5185\u5BB9"
+      copyContent: 
+      texPath: 
+      fileUrl: https://tower.im/teams/8e8ab4c0aecf4ee29eff500a7e4b6e96/projects/
+    - contentFormat: 3
+      titleFormat: 1
+      content: "\u6DFB\u52A0\u5185\u5BB9"
+      copyContent: 
+      texPath: 
+      fileUrl: D:\UnityProject\UnityToolsGIT\ToolsDevProject\Assets\DocumentTool\Texture
+    - contentFormat: 0
+      titleFormat: 2
+      content: "\u6DFB\u52A0\u5185\u5BB9"
+      copyContent: 
+      texPath: 
+      fileUrl: 
+  - title: "\u56FE\u7247\u683C\u5F0F"
+    sentences:
+    - contentFormat: 2
+      titleFormat: 0
+      content: "\u663E\u793A\u56FE\u7247"
+      copyContent: 
+      texPath: Assets/DocumentTool/Texture/test.TGA
+      fileUrl: 
+    - contentFormat: 2
+      titleFormat: 1
+      content: "\u663E\u793A\u56FE\u7247"
+      copyContent: 
+      texPath: Assets/DocumentTool/Texture/test.TGA
+      fileUrl: 
+    - contentFormat: 2
+      titleFormat: 2
+      content: "\u663E\u793A\u56FE\u7247"
+      copyContent: 
+      texPath: Assets/DocumentTool/Texture/test.TGA
+      fileUrl: 
+    - contentFormat: 2
+      titleFormat: 3
+      content: "\u663E\u793A\u56FE\u7247"
+      copyContent: 
+      texPath: Assets/DocumentTool/Texture/test.TGA
+      fileUrl: 
+  targetAsset: {fileID: 0}

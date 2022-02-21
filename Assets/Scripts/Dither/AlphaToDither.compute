@@ -1,0 +1,40 @@
+#pragma kernel CSMain
+
+Texture2D<float4> _InputTex;
+Buffer<float> _DitherConvolution;
+int _SqrtLength;
+
+RWStructuredBuffer<float4> Result;
+
+[numthreads(8,8,1)]
+void CSMain (uint3 id : SV_DispatchThreadID)
+{
+    uint width, height;
+    _InputTex.GetDimensions(width, height);
+    int indexR = id.x + id.y * width;
+
+    int indexD = id.x % _SqrtLength + id.y % _SqrtLength * _SqrtLength;
+    float weight = (_DitherConvolution[indexD] + 1) / 16.0;
+    float r = (1 - _InputTex[id.xy].a) < weight ? 1 : 0;
+
+    int indexD_2 = id.x % _SqrtLength + id.y % _SqrtLength * _SqrtLength;
+    float weight_2 = (_DitherConvolution[indexD_2] + 1) / 16.0;
+    float g = (1 - _InputTex[id.xy].a * _InputTex[id.xy].a) < weight_2 ? 1 : 0;
+
+    int indexD_3 = (id.x / 3) % _SqrtLength + (id.y / 3) % _SqrtLength * _SqrtLength;
+    float weight_3 = (_DitherConvolution[indexD_3] + 1) / 16.0;
+    float b = (1 - _InputTex[id.xy].a) < weight_3 ? 1 : 0;
+
+    int indexD_4 = (id.x / 4) % _SqrtLength + (id.y / 4) % _SqrtLength * _SqrtLength;
+    float weight_4 = (_DitherConvolution[indexD_4] + 1) / 16.0;
+    float a = (1 - _InputTex[id.xy].a) < weight_4 ? 1 : 0;
+
+    float alpha = 0;
+    if (1.0 >= _InputTex[id.xy].a && _InputTex[id.xy].a >= 0.70) alpha = 1;
+    else if (0.70 > _InputTex[id.xy].a && _InputTex[id.xy].a >= 0.50) alpha = r;
+    else if (0.50 > _InputTex[id.xy].a && _InputTex[id.xy].a >= 0.40) alpha = g;
+    else if (0.40 > _InputTex[id.xy].a && _InputTex[id.xy].a >= 0.30) alpha = g;
+    else if (0.30 > _InputTex[id.xy].a && _InputTex[id.xy].a >= 0) alpha = 0;
+
+    Result[indexR] = float4(pow(_InputTex[id.xy].rgb, 1.0 / 2.2), alpha);
+}
